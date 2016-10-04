@@ -30,3 +30,8 @@ console.log('results--', results);
 //increment
 results++;
 console.log('results++ ', results);
+
+
+results = (12+100) /2;
+
+console.log('(12 +100) /2 ', results);
