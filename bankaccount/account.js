@@ -9,6 +9,10 @@ var account =  {
 function withdraw(account, amount) {
   if(account.balance >= amount) {
     account.balance  = account.balance - amount;
+    account.lastTrans =  {
+      type: 'withdraw',
+      amount: amount
+    };
     console.log('Withdrawal of', amount, 'Successful');
   } else {
     console.log('Balance of', account.balance, 'Cannot withdraw ', amount);
@@ -19,6 +23,10 @@ function withdraw(account, amount) {
 function deposit(account, amount) {
   if(amount > 1) {
     account.balance = account.balance + amount;
+    account.lastTrans =  {
+      type: 'deposit',
+      amount: amount
+    };
     console.log('deposit of', amount, 'done');
   } else {
     console.log('deposit of', amount , 'not possible');
