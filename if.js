@@ -1,4 +1,4 @@
-var averageGrade = 98;
+/jt var averageGrade = 98;
 
 if(averageGrade > 70) {
   console.log('You Passed the Course');
