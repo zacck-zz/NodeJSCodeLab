@@ -8,7 +8,7 @@ var account =  {
 //withdraw
 function withdraw(account, amount) {
   if(account.balance >= amount) {
-    account.balance  = account.balance - amount;
+    account.balance  -= amount;
     account.lastTrans =  {
       type: 'withdraw',
       amount: amount
@@ -22,7 +22,7 @@ function withdraw(account, amount) {
 //deposit
 function deposit(account, amount) {
   if(amount > 1) {
-    account.balance = account.balance + amount;
+    account.balance += amount;
     account.lastTrans =  {
       type: 'deposit',
       amount: amount
