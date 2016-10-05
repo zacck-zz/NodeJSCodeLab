@@ -12,7 +12,7 @@ var friend = 'Keegan';
 
 if(friend === 'Michael' || friend === 'Marike' || friend === 'Steph' || friend === 'Keegan') {
   console.log('Hey', friend);
-} else if (friend === 'Badane') {
+} else if (friend === 'Elmo') {
   console.log('I dont like you :(');
 } else {
   console.log('Hey!');
