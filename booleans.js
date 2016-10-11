@@ -13,7 +13,11 @@ if (isValid) {
 
 //challenge
 function toggleBoolean(myBool) {
-  return !myBool;
+  if(typeof(myBool) === "boolean") {
+    return !myBool;
+  } else {
+    console.log('Please pass in a boolean');
+  }
 };
 
 function type(aBool) {
@@ -30,3 +34,4 @@ function type(aBool) {
 console.log('calling toggle with a true', type(toggleBoolean(true)));
 
 console.log('calling toggle with a false', type(toggleBoolean(false)));
+console.log('calling with a letter', type(toggleBoolean('a')));
