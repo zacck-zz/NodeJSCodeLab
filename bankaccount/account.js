@@ -68,12 +68,14 @@ function getBalance(account) {
 };
 
 
-var zacckAccount =  createAccount('zacck', 200);
-deposit(zacckAccount, 80);
-getBalance(zacckAccount);
-withdraw(zacckAccount, 90);
-getBalance(zacckAccount);
+createAccount('zacck', 200);
+var zAcc = getAccount('zacck');
+deposit(zAcc, 80);
+getBalance(zAcc);
+withdraw(zAcc, 90);
+getBalance(zAcc);
 
-var minionAccount = createAccount('Minion', 30);
-withdraw(minionAccount, 10);
-getBalance(minionAccount);
+createAccount('Minion', 30);
+var mAcc = getAccount('Minion');
+withdraw(mAcc, 10);
+getBalance(mAcc);
