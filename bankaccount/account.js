@@ -23,13 +23,12 @@ function createAccount(username, balance) {
 function getAccount(username) {
   var UserAccount = undefined;
   //find matching account
-  currentAccounts.forEach((account) => {
-    //check which username matches which account
-    if(username === account.userName) {
-      //return matching account
-      UserAccount = account
+  //replace forEach with for
+  for(var i = 0; i < currentAccounts.length; i++) {
+    if(currentAccounts[i].userName === username) {
+      UserAccount = currentAccounts[i];
     }
-  });
+  };
 
   return UserAccount;
 }
@@ -83,5 +82,3 @@ var mAcc = getAccount('Minion');
 withdraw(mAcc, 10);
 getBalance(mAcc);
 console.log('****** STAGE 3 ******');
-
-//replace forEach with for
