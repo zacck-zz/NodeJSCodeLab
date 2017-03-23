@@ -69,13 +69,23 @@ function getBalance(account) {
 
 //createBalanceGetter
 
+function createBalanceGetter() {
+  function balance(account) {
+    return account.balance
+  };
+
+  return balance;
+};
+
+
+
 
 createAccount('zacck', 200);
 var zAcc = getAccount('zacck');
 deposit(zAcc, '67');
-getBalance(zAcc);
+var zacckBalance = createBalanceGetter(zAcc);
 withdraw(zAcc, 90);
-getBalance(zAcc);
+console.log('balance getter in action', zacckBalance(zAcc));
 
 createAccount('Minion', 30);
 var mAcc = getAccount('Minion');
