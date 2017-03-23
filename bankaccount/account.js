@@ -35,7 +35,7 @@ function getAccount(username) {
 
 //withdraw
 function withdraw(account, amount) {
-  if(account.balance >= amount) {
+  if(account.balance >= amount && typeof(amount) === 'number') {
     account.balance  -= amount;
     account.lastTrans =  {
       type: 'withdraw',
@@ -82,7 +82,7 @@ function createBalanceGetter() {
 
 createAccount('zacck', 200);
 var zAcc = getAccount('zacck');
-deposit(zAcc, '67');
+deposit(zAcc, 'yasas');
 var zacckBalance = createBalanceGetter(zAcc);
 withdraw(zAcc, 90);
 console.log('balance getter in action', zacckBalance(zAcc));
