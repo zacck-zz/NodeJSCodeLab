@@ -50,7 +50,8 @@ function withdraw(account, amount) {
 
 //deposit
 function deposit(account, amount) {
-  if(amount > 1) {
+  //use type to only accept number
+  if(amount > 1 && typeof(amount) === 'number') {
     account.balance += amount;
     account.lastTrans =  {
       type: 'deposit',
@@ -58,7 +59,7 @@ function deposit(account, amount) {
     };
     console.log('deposit of', amount, 'to', account.userName, 'done');
   } else {
-    console.log('deposit of', amount , 'from', account.userName, 'not possible');
+    console.log('deposit of', amount , 'from', account.userName, 'not possible must be a positive number');
   }
 };
 
@@ -67,10 +68,12 @@ function getBalance(account) {
   console.log('current balance is', account.balance);
 };
 
+//createBalanceGetter
+
 
 createAccount('zacck', 200);
 var zAcc = getAccount('zacck');
-deposit(zAcc, 80);
+deposit(zAcc, '67');
 getBalance(zAcc);
 withdraw(zAcc, 90);
 getBalance(zAcc);
@@ -79,3 +82,6 @@ createAccount('Minion', 30);
 var mAcc = getAccount('Minion');
 withdraw(mAcc, 10);
 getBalance(mAcc);
+console.log('****** STAGE 3 ******');
+
+//replace forEach with for
